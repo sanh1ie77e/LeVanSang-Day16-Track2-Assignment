@@ -1,14 +1,14 @@
 {
-  "load_data_time_seconds": 2.2164565619998484,
-  "training_time_seconds": 2.3000532789999397,
+  "load_data_time_seconds": 2.469374935000019,
+  "training_time_seconds": 2.37089185800005,
   "best_iteration": 1,
   "auc_roc": 0.9390578702640313,
   "accuracy": 0.9992099996488887,
   "f1_score": 0.7692307692307693,
   "precision": 0.7731958762886598,
   "recall": 0.7653061224489796,
-  "inference_latency_1_row_ms": 1.1638184200000978,
-  "inference_throughput_rows_per_second": 736101.3122719843,
+  "inference_latency_1_row_ms": 1.1798977700004798,
+  "inference_throughput_rows_per_second": 724557.5860429173,
   "benchmark_config": {
     "seed": 42,
     "prediction_threshold": 0.5,
