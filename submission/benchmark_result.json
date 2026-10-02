@@ -1,0 +1,26 @@
+{
+  "load_data_time_seconds": 2.2164565619998484,
+  "training_time_seconds": 2.3000532789999397,
+  "best_iteration": 1,
+  "auc_roc": 0.9390578702640313,
+  "accuracy": 0.9992099996488887,
+  "f1_score": 0.7692307692307693,
+  "precision": 0.7731958762886598,
+  "recall": 0.7653061224489796,
+  "inference_latency_1_row_ms": 1.1638184200000978,
+  "inference_throughput_rows_per_second": 736101.3122719843,
+  "benchmark_config": {
+    "seed": 42,
+    "prediction_threshold": 0.5,
+    "train_rows": 182276,
+    "validation_rows": 45569,
+    "test_rows": 56962,
+    "test_fraud_rows": 98,
+    "threads": 2,
+    "latency_repeats": 100,
+    "throughput_batch_rows": 1000,
+    "throughput_repeats": 20,
+    "lightgbm_version": "4.7.0",
+    "python_version": "3.10.12"
+  }
+}
