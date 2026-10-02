@@ -24,3 +24,18 @@ Không có private key, Kaggle credentials, AWS credentials, Terraform state ho�
 `terraform_source.zip` chứa thư mục terraform theo mục mã nguồn trong README. ZIP tổng chứa toàn bộ hồ sơ và các ảnh đã thu; kiểm tra hạn chế Billing nêu trên trước khi nộp. Đã bổ sung evidence/terraform_destroy.png: Terraform xác nhận Destroy complete! Resources: 27 destroyed.
 
 Dọn dẹp chỉ sau khi tải kết quả về và thu đủ bằng chứng: chạy terraform destroy tại đúng thư mục đã apply, đợi Destroy complete!, rồi kiểm tra EC2, NAT Gateway, ALB, EBS và Elastic IP của lab đã được xóa. Không xóa state trước khi destroy.
+## Xác nhận triển khai và tái chạy benchmark
+
+Ảnh `evidence/terraform_apply.png` cho thấy Terraform tạo 27 tài nguyên và ALB có hostname thuộc us-east-1. Tên output `gpu_private_ip` được dùng chung trong mã gốc; lần chạy này dùng CPU vì enable_gpu=false.
+
+Ở lần chạy us-east-1, kiểm tra import ban đầu thiếu LightGBM, nên đã cài thư viện thủ công trên Compute Node bằng các lệnh sau. Không khẳng định startup script đã tự cài thành công.
+
+```bash
+sudo apt-get update
+sudo apt-get install -y python3-pip libgomp1 unzip
+python3 -m pip install lightgbm scikit-learn pandas numpy kaggle
+```
+
+Để chạy benchmark, đặt `benchmark.py` và `creditcard.csv` trong cùng thư mục, rồi chạy `python3 benchmark.py`. Dataset tải từ Kaggle `mlg-ulb/creditcardfraud`, dùng credentials riêng của người chạy. Dataset và credentials không nằm trong bộ nộp.
+
+Đo throughput dùng batch 1.000 dòng, báo cáo theo dòng/giây. Cảnh báo eval_set deprecated trong ảnh không làm lần chạy thất bại; phiên bản LightGBM thực tế là 4.7.0.
