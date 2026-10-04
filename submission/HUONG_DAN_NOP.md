@@ -15,9 +15,9 @@
 4. `evidence/billing_bills.png`: tổng quan Bills, kỳ tháng 10/2026, chụp 02/10/2026.
 5. `evidence/billing_bills_accounts.png`: phần Charges by account của Bills.
 
-Hạn chế của bằng chứng Billing: trang Management account chưa có dữ liệu; chưa thể hiện chi phí EC2/NAT hoặc chi phí riêng của tài khoản lab 800464327055. Báo cáo đã ghi rõ trạng thái này. Nếu người chấm cần chi phí thực tế theo dịch vụ, bổ sung ảnh sau khi dữ liệu cập nhật, lọc đúng tài khoản lab trong Cost Explorer; không cần giữ tài nguyên chạy để chờ cập nhật.
+Cập nhật Billing ngày 04/10/2026: đã có tổng chi phí tháng đến hiện tại USD 0,27 và biểu đồ theo dịch vụ trong Management account. Ảnh mới chưa lọc riêng tài khoản lab 800464327055 hoặc us-east-1, cũng chưa có dòng phí NAT Gateway riêng; không coi tổng dashboard là chi phí riêng của lần benchmark hoặc bằng chứng đã thanh toán.
 
-Nếu Billing chưa có dữ liệu, ghi rõ chưa cập nhật tại thời điểm chụp; không giữ hạ tầng chạy chỉ để chờ hóa đơn.
+Giữ hai ảnh Bills ngày 02/10/2026 để đối chiếu trạng thái ban đầu chưa có dữ liệu. Ba ảnh bổ sung là `evidence/billing_home_2026-10-04.png`, `evidence/billing_services_2026-10-04.png`, `evidence/billing_trends_2026-10-04.png`.
 
 Không có private key, Kaggle credentials, AWS credentials, Terraform state hoặc thư mục provider .terraform trong bộ nộp bài. Lần triển khai us-east-1 đã được destroy thành công; ảnh xác nhận nằm trong evidence/terraform_destroy.png. Khi cần tái triển khai mã nguồn này, tạo SSH key mới với tên lab-key/lab-key.pub theo README.
 

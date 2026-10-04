@@ -14,7 +14,7 @@ Lần thực hành nộp bài được triển khai lại tại `us-east-1` theo
 6. Tại ngưỡng xác suất 0,5, Precision = 0,773196, Recall = 0,765306 và F1 = 0,769231, cho thấy vẫn còn giao dịch gian lận bị bỏ sót.
 7. Latency trung bình một dòng sau warm-up là 1,179898 ms; throughput khoảng 724.557,586043 dòng/giây khi đo batch 1.000 dòng, lặp 20 lần.
 8. Bằng chứng tài nguyên được lấy sau benchmark nên phản ánh trạng thái sau khi chạy, không đại diện cho mức CPU/RAM cực đại trong training; số byte mạng là bộ đếm tích lũy.
-9. Tại thời điểm chụp 20:34 ngày 02/10/2026 (GMT+7), Bills của Management account 391016433737 hiển thị “No data” và tổng tạm tính USD 0,00; chưa có chi phí riêng cho tài khoản lab 800464327055 nên không kết luận lab miễn phí hoặc ghi ước tính README thành phí thực tế.
+9. Billing ban đầu ngày 02/10/2026 chưa có dữ liệu; ảnh bổ sung ngày 04/10/2026 cho thấy Month-to-date cost = USD 0,27 tại Management account 391016433737 và biểu đồ có EC2 - Other, EC2 Compute, Elastic Load Balancing, VPC, S3; chưa lọc riêng tài khoản lab 800464327055 hoặc region, nên không quy toàn bộ tổng này cho lần chạy us-east-1.
 
 ## Bảng benchmark
 
@@ -33,7 +33,7 @@ Lần thực hành nộp bài được triển khai lại tại `us-east-1` theo
 
 Kết quả đầy đủ và cấu hình đo nằm trong `benchmark_result.json`. Bằng chứng terminal benchmark nằm trong `evidence/benchmark_output.png`; số liệu tài nguyên chép từ các screenshot của máy mới nằm trong `evidence/resource_usage.txt`.
 
-Ảnh tài nguyên: `evidence/resource_top.png`, `evidence/resource_memory.png`, `evidence/resource_network.png`. Ảnh Bills gồm tổng quan `evidence/billing_bills.png` và phần Charges by account `evidence/billing_bills_accounts.png`. Cả hai ảnh Billing chưa có dữ liệu chi phí theo dịch vụ hoặc tài khoản; cần bổ sung khi AWS cập nhật nếu người chấm yêu cầu.
+Ảnh tài nguyên: `evidence/resource_top.png`, `evidence/resource_memory.png`, `evidence/resource_network.png`. Hai ảnh Bills ngày 02/10/2026 được giữ làm bằng chứng ban đầu chưa có dữ liệu. Bổ sung ngày 04/10/2026: `evidence/billing_home_2026-10-04.png` (tổng tháng USD 0,27), `evidence/billing_services_2026-10-04.png` (biểu đồ theo dịch vụ) và `evidence/billing_trends_2026-10-04.png` (phần cuối dashboard). Các ảnh chưa hiển thị số tiền riêng NAT Gateway hoặc lọc tài khoản lab; tổng dashboard là chi phí tháng đến hiện tại, không phải bằng chứng đã thanh toán.
 
 ## Dọn dẹp
 
